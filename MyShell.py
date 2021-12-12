@@ -6,9 +6,9 @@ django.setup()
 
 from pizzas.models import Pizza, Topping
 
-pizza = Pizza.objects.all()
+pizzas = Pizza.objects.all()
 
-for p in pizza:
+for p in pizzas:
     print(p.id)
     print(p.text)
     print(p.date_added)
