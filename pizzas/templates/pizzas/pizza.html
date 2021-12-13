@@ -1,8 +1,14 @@
 {% extends "pizzas/base.html" %}
 
+{% block page_header %}
+<h1>{{ pizza }} Pizza</h1>
+{% endblock page_header %}
+
 {% block content %}
 
-<p>Toppings: {{ pizza }}</p>
+<div class="page-header">
+    <h4>Toppings</h4>
+</div>
 
 <ul>
     {% for t in toppings %}
@@ -14,7 +20,10 @@
     {% endfor %}
 </ul>
 
-<p>Comments: {{ pizza }}</p>
+<div class="page-header">
+    <h4>Comments</h4>
+</div>
+
 
 <p>
     <a href="{% url 'pizzas:new_comment' pizza.id %}">Add a new comment</a>
@@ -22,12 +31,16 @@
 
 <ul>
     {% for c in comments %}
-    <li>
-        <p>{{ c }}</p>
-        <p>{{ c.owner }} - {{ c.date_added|date:'M d, Y H:i' }}</p>
-    </li>
+    <div class="card mb-3">
+        <h4 class="card-header">
+            {{ c.owner }} - {{ c.date_added|date:'M d, Y H:i' }}
+        </h4>
+        <div class="card-body">
+            {{ c | linebreaks }}
+        </div>
+    </div>
     {% empty %}
-    <li>There are no comments for this pizza yet.</li>
+    <p>There are no comments for this pizza yet.</p>
     {% endfor %}
 </ul>
 
