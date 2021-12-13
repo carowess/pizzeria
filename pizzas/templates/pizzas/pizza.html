@@ -24,7 +24,7 @@
     {% for c in comments %}
     <li>
         <p>{{ c }}</p>
-        <p>{{ c.date_added|date:'M d, Y H:i' }}</p>
+        <p>{{ c.owner }} - {{ c.date_added|date:'M d, Y H:i' }}</p>
     </li>
     {% empty %}
     <li>There are no comments for this pizza yet.</li>
