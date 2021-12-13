@@ -1,13 +1,22 @@
 {% extends "pizzas/base.html" %}
 
 {% block page_header %}
-<div class="jumbotron">
+<div class="jumbotron" style="background-color:#F88379">
     <h1 class="display-3">Find your favorite pizza.</h1>
 
     <p class="lead">Pizzeria shows an assortment of pizzas and
         their respective toppings.</p>
 
-    <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}" role="button">Register &raquo;</a>
+    <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}" role="button"
+        style="background-color:#FFFF8F; border-color:#000000;color:#000000">
+        Register &raquo;</a>
 </div>
+
+<style>
+    body {
+        background-image: url("https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQy3U5CHCvJGgBjF52zV8_f8ErkIq19ntUpWsq9aV2jhsFCi9_tqdfnqoqGGP6kJBieGrsyT2xNnUnh8dtSRrFnxwPAbuETHmH8t-cB7yU&usqp=CAE");
+    }
+</style>
+
 
 {% endblock page_header %}
